@@ -8,13 +8,13 @@ const cars = [
     image: "/waze-lease-cars/images/tesla-model-y.jpg",
     name: "Tesla Model Y",
     type: "חשמלי מלא",
-    price: "3,190",
+    price: "1,990",
   },
   {
     image: "/waze-lease-cars/images/electric-car.jpg",
     name: "BYD Atto 3",
     type: "חשמלי מלא",
-    price: "2,390",
+    price: "1,690",
   },
   {
     image: "/waze-lease-cars/images/luxury-car.jpg",
@@ -26,7 +26,7 @@ const cars = [
     image: "/waze-lease-cars/images/tesla-white.jpg",
     name: "Tesla Model 3",
     type: "חשמלי מלא",
-    price: "2,890",
+    price: "1,490",
   },
 ];
 
