@@ -13,7 +13,7 @@ const services: { icon: ReactNode; title: string; description: string }[] = [
   },
   {
     icon: <BuildingIcon />,
-    title: "ליסינג תפעולי",
+    title: "ליסינג לעסקים",
     description:
       "פתרון מושלם לעסקים. ניהול צי רכבים מלא, חיסכון במיסים, ושירות 24/7 לכל העובדים.",
   },

@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="text-white-off text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
         >
-          ליסינג פרטי, תפעולי ומימוני בתנאים הטובים ביותר בישראל.
+          ליסינג פרטי ומימוני בתנאים הטובים ביותר בישראל.
           <br />
           מבחר ענק של רכבים חדשים, שירות אישי ומקצועי, ומחירים שלא תמצאו בשום מקום אחר.
         </motion.p>
@@ -80,10 +80,10 @@ export default function Hero() {
             גלו את השירותים שלנו
           </a>
           <a
-            href="#calculator"
+            href="#contact"
             className="border-2 border-white-pure/30 text-white-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-white-pure/10 hover:border-gold/50 hover:text-gold transition-all duration-300 backdrop-blur-sm w-full sm:w-auto text-center"
           >
-            חשבו תשלום חודשי
+            צרו קשר
           </a>
         </motion.div>
 

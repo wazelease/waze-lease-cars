@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Gallery from "@/components/Gallery";
 import Services from "@/components/Services";
 import Advantages from "@/components/Advantages";
-import Calculator from "@/components/Calculator";
+
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import MapSection from "@/components/MapSection";
@@ -21,7 +21,7 @@ export default function Home() {
         <Gallery />
         <Services />
         <Advantages />
-        <Calculator />
+
         <Testimonials />
         <Contact />
         <MapSection />

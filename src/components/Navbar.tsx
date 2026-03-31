@@ -8,7 +8,7 @@ const navLinks = [
 
   { label: "שירותים", href: "#services" },
   { label: "יתרונות", href: "#advantages" },
-  { label: "חישוב ליסינג", href: "#calculator" },
+
   { label: "המלצות", href: "#testimonials" },
   { label: "מיקום", href: "#location" },
   { label: "צור קשר", href: "#contact" },

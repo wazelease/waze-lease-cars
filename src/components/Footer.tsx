@@ -33,7 +33,7 @@ export default function Footer() {
                   { label: "רכבים", href: "#vehicles" },
                   { label: "שירותים", href: "#services" },
                   { label: "יתרונות", href: "#advantages" },
-                  { label: "חישוב ליסינג", href: "#calculator" },
+
                   { label: "המלצות", href: "#testimonials" },
                   { label: "צור קשר", href: "#contact" },
                 ].map((link) => (
@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 "ליסינג פרטי",
-                "ליסינג תפעולי",
+                "ליסינג לעסקים",
                 "ליסינג מימוני",
                 "טרייד אין",
                 "ביטוח רכב",
