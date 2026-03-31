@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const advantages = [
   {
@@ -61,6 +62,18 @@ export default function Advantages() {
             >
               דברו איתנו היום
             </a>
+
+            {/* Car image */}
+            <div className="relative mt-10 rounded-2xl overflow-hidden border border-gold/20">
+              <Image
+                src="/waze-lease-cars/images/car-interior.jpg"
+                alt="פנים רכב יוקרתי - Waze Lease Cars"
+                width={600}
+                height={350}
+                className="w-full h-56 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black-pure/60 to-transparent" />
+            </div>
           </motion.div>
 
           {/* Cards side */}

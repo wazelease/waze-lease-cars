@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -8,22 +9,24 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black-pure via-black-rich to-black-pure" />
+      {/* Background car image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/waze-lease-cars/images/tesla-dark.jpg"
+          alt="רכב יוקרה - Waze Lease Cars"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black-pure/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black-pure/90 via-black-pure/60 to-black-pure/95" />
+      </div>
 
       {/* Gold glow effects */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
-
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -31,7 +34,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8">
+          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
             חברת הליסינג הפרימיום של ישראל
           </span>
         </motion.div>
@@ -51,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-gray-mid text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-gray-light text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           ליסינג פרטי, תפעולי ומימוני בתנאים הטובים ביותר בישראל.
           <br />
@@ -72,18 +75,56 @@ export default function Hero() {
           </a>
           <a
             href="#calculator"
-            className="border-2 border-gold/50 text-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-gold/10 transition-all duration-300 w-full sm:w-auto text-center"
+            className="border-2 border-gold/50 text-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-gold/10 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto text-center"
           >
             חשבו תשלום חודשי
           </a>
+        </motion.div>
+
+        {/* Featured Cars Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          className="mt-16 flex flex-col sm:flex-row gap-6 justify-center items-center max-w-4xl mx-auto"
+        >
+          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-500">
+            <Image
+              src="/waze-lease-cars/images/tesla-model-y.jpg"
+              alt="Tesla Model Y - ליסינג טסלה"
+              width={600}
+              height={350}
+              className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/90 via-black-pure/20 to-transparent" />
+            <div className="absolute bottom-4 right-4 left-4">
+              <h3 className="font-rubik font-bold text-lg">Tesla Model Y</h3>
+              <p className="text-gold text-sm">החל מ-₪3,190/חודש</p>
+            </div>
+          </div>
+
+          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-500">
+            <Image
+              src="/waze-lease-cars/images/electric-car.jpg"
+              alt="BYD חשמלי - ליסינג BYD"
+              width={600}
+              height={350}
+              className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/90 via-black-pure/20 to-transparent" />
+            <div className="absolute bottom-4 right-4 left-4">
+              <h3 className="font-rubik font-bold text-lg">BYD Atto 3</h3>
+              <p className="text-gold text-sm">החל מ-₪2,390/חודש</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
         >
           {[
             { number: "5,000+", label: "רכבים בצי" },
