@@ -9,84 +9,53 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Dark base background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black-pure via-black-rich to-black-rich" />
+      {/* Dark base */}
+      <div className="absolute inset-0 bg-black-pure" />
 
-      {/* Subtle radial gold glow behind the cars */}
-      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px]" />
-      <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-gold/[0.05] rounded-full blur-[80px]" />
+      {/* The car — large, visible, centered at bottom */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.4, delay: 0.6, ease: "easeOut" }}
+        className="absolute bottom-[2%] sm:bottom-[5%] left-1/2 -translate-x-1/2 w-[95%] sm:w-[75%] md:w-[65%] lg:w-[55%] max-w-[850px]"
+      >
+        <Image
+          src="/waze-lease-cars/images/tesla-cutout.png"
+          alt="Tesla Model Y - Waze Lease Cars"
+          width={850}
+          height={500}
+          className="w-full h-auto drop-shadow-[0_10px_60px_rgba(201,168,76,0.25)]"
+          priority
+        />
+        {/* Gold reflection under the car */}
+        <div className="absolute -bottom-4 left-[10%] right-[10%] h-16 bg-gold/8 rounded-full blur-2xl" />
+      </motion.div>
 
-      {/* Animated gold particles */}
+      {/* Ground reflection line */}
+      <div className="absolute bottom-[14%] sm:bottom-[18%] left-[10%] right-[10%] h-px bg-gradient-to-l from-transparent via-gold/20 to-transparent" />
+
+      {/* Gold ambient glow behind the car */}
+      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gold/[0.04] rounded-full blur-[100px]" />
+
+      {/* Subtle gold light from top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gold/[0.03] rounded-full blur-[80px]" />
+
+      {/* Gold particles */}
       <div className="absolute top-24 right-[15%] w-1.5 h-1.5 bg-gold/30 rounded-full blur-sm animate-pulse" />
-      <div className="absolute top-44 left-[20%] w-1 h-1 bg-gold/20 rounded-full blur-sm animate-pulse delay-700" />
-      <div className="absolute top-1/3 left-[8%] w-1 h-1 bg-gold/40 rounded-full blur-sm animate-pulse delay-500" />
-      <div className="absolute top-1/4 right-[10%] w-2 h-2 bg-gold/15 rounded-full blur-sm animate-pulse delay-1000" />
+      <div className="absolute top-44 left-[20%] w-1 h-1 bg-gold/25 rounded-full blur-sm animate-pulse delay-700" />
+      <div className="absolute top-1/3 left-[8%] w-1 h-1 bg-gold/35 rounded-full blur-sm animate-pulse delay-500" />
 
-      {/* Embedded car images — part of the background */}
-      <motion.div
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-        className="absolute bottom-[5%] sm:bottom-[8%] left-[2%] sm:left-[5%] w-[45%] sm:w-[38%] max-w-[550px] pointer-events-none"
-      >
-        <div className="relative">
-          <Image
-            src="/waze-lease-cars/images/tesla-cutout.png"
-            alt="Tesla Model Y"
-            width={550}
-            height={350}
-            className="w-full h-auto opacity-80 drop-shadow-[0_5px_40px_rgba(201,168,76,0.15)]"
-            priority
-          />
-          {/* Reflection effect */}
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gold/5 to-transparent blur-sm" />
-        </div>
-        {/* Car label */}
-        <div className="text-center mt-2 opacity-60">
-          <span className="text-white-pure/80 text-xs sm:text-sm font-rubik font-medium">Tesla Model Y</span>
-          <span className="text-gold/70 text-xs mr-2">החל מ-₪3,190/חודש</span>
-        </div>
-      </motion.div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black-rich to-transparent z-[5]" />
 
-      <motion.div
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, delay: 1, ease: "easeOut" }}
-        className="absolute bottom-[5%] sm:bottom-[8%] right-[2%] sm:right-[5%] w-[45%] sm:w-[38%] max-w-[550px] pointer-events-none"
-      >
-        <div className="relative">
-          <Image
-            src="/waze-lease-cars/images/byd-cutout.png"
-            alt="BYD Atto 3"
-            width={550}
-            height={350}
-            className="w-full h-auto opacity-80 drop-shadow-[0_5px_40px_rgba(201,168,76,0.15)]"
-            priority
-          />
-          {/* Reflection effect */}
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gold/5 to-transparent blur-sm" />
-        </div>
-        {/* Car label */}
-        <div className="text-center mt-2 opacity-60">
-          <span className="text-white-pure/80 text-xs sm:text-sm font-rubik font-medium">BYD Atto 3</span>
-          <span className="text-gold/70 text-xs mr-2">החל מ-₪2,390/חודש</span>
-        </div>
-      </motion.div>
-
-      {/* Ground line / reflection surface */}
-      <div className="absolute bottom-[12%] sm:bottom-[16%] left-[5%] right-[5%] h-px bg-gradient-to-l from-transparent via-gold/10 to-transparent" />
-
-      {/* Bottom fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black-rich to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-[28%] sm:mb-[22%]">
+      {/* Content — positioned upper half */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-[35%] sm:mb-[28%] md:mb-[24%]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-md">
+          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8">
             חברת הליסינג הפרימיום של ישראל
           </span>
         </motion.div>
