@@ -9,41 +9,49 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background car image */}
+      {/* Full-width background image */}
       <div className="absolute inset-0">
         <Image
           src="/waze-lease-cars/images/tesla-dark.jpg"
-          alt="רכב יוקרה - Waze Lease Cars"
+          alt="רכב יוקרה - Waze Lease Cars ליסינג"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center scale-105"
           priority
           quality={90}
         />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black-pure/75" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black-pure/90 via-black-pure/60 to-black-pure/95" />
+        {/* Multi-layer overlay for smooth blend with site colors */}
+        <div className="absolute inset-0 bg-black-pure/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black-pure via-transparent to-black-pure" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black-pure/80 via-transparent to-black-pure/80" />
+        {/* Gold tint at bottom for seamless transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black-rich to-transparent" />
       </div>
 
-      {/* Gold glow effects */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
+      {/* Animated gold particles */}
+      <div className="absolute top-20 right-[15%] w-2 h-2 bg-gold/30 rounded-full blur-sm animate-pulse" />
+      <div className="absolute top-40 left-[20%] w-1.5 h-1.5 bg-gold/20 rounded-full blur-sm animate-pulse delay-700" />
+      <div className="absolute bottom-40 right-[30%] w-2.5 h-2.5 bg-gold/25 rounded-full blur-sm animate-pulse delay-1000" />
+      <div className="absolute top-1/3 left-[10%] w-1 h-1 bg-gold/40 rounded-full blur-sm animate-pulse delay-500" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Subtle gold light leak */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold/4 rounded-full blur-[100px]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+          <span className="inline-block bg-gold/10 border border-gold/30 text-gold px-6 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-md">
             חברת הליסינג הפרימיום של ישראל
           </span>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="font-rubik font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6"
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          className="font-rubik font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 drop-shadow-2xl"
         >
           הרכב החדש שלך
           <br />
@@ -51,10 +59,10 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-gray-light text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+          className="text-white-off/90 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
         >
           ליסינג פרטי, תפעולי ומימוני בתנאים הטובים ביותר בישראל.
           <br />
@@ -62,69 +70,89 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
             href="#services"
-            className="bg-gold text-black-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 w-full sm:w-auto text-center"
+            className="bg-gold text-black-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/25 w-full sm:w-auto text-center"
           >
             גלו את השירותים שלנו
           </a>
           <a
             href="#calculator"
-            className="border-2 border-gold/50 text-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-gold/10 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto text-center"
+            className="border-2 border-white-pure/20 text-white-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-white-pure/10 hover:border-gold/50 hover:text-gold transition-all duration-300 backdrop-blur-sm w-full sm:w-auto text-center"
           >
             חשבו תשלום חודשי
           </a>
         </motion.div>
 
-        {/* Featured Cars Showcase */}
+        {/* Featured Cars */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.65, ease: "easeOut" }}
           className="mt-16 flex flex-col sm:flex-row gap-6 justify-center items-center max-w-4xl mx-auto"
         >
-          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-500">
+          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-white-pure/10 hover:border-gold/40 transition-all duration-500 backdrop-blur-sm bg-black-pure/20">
             <Image
               src="/waze-lease-cars/images/tesla-model-y.jpg"
               alt="Tesla Model Y - ליסינג טסלה"
               width={600}
               height={350}
-              className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/90 via-black-pure/20 to-transparent" />
-            <div className="absolute bottom-4 right-4 left-4">
-              <h3 className="font-rubik font-bold text-lg">Tesla Model Y</h3>
-              <p className="text-gold text-sm">החל מ-₪3,190/חודש</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/95 via-black-pure/30 to-transparent" />
+            <div className="absolute bottom-4 right-4 left-4 flex items-end justify-between">
+              <div>
+                <h3 className="font-rubik font-bold text-lg">Tesla Model Y</h3>
+                <p className="text-gold text-sm font-medium">החל מ-₪3,190/חודש</p>
+              </div>
+              <a
+                href="https://wa.me/972533018838?text=שלום, מתעניין בליסינג Tesla Model Y"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gold/90 text-black-pure px-4 py-1.5 rounded-full text-xs font-bold hover:bg-gold transition-colors"
+              >
+                לפרטים
+              </a>
             </div>
           </div>
 
-          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-500">
+          <div className="relative group w-full sm:w-1/2 rounded-2xl overflow-hidden border border-white-pure/10 hover:border-gold/40 transition-all duration-500 backdrop-blur-sm bg-black-pure/20">
             <Image
               src="/waze-lease-cars/images/electric-car.jpg"
-              alt="BYD חשמלי - ליסינג BYD"
+              alt="BYD Atto 3 חשמלי - ליסינג BYD"
               width={600}
               height={350}
-              className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/90 via-black-pure/20 to-transparent" />
-            <div className="absolute bottom-4 right-4 left-4">
-              <h3 className="font-rubik font-bold text-lg">BYD Atto 3</h3>
-              <p className="text-gold text-sm">החל מ-₪2,390/חודש</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black-pure/95 via-black-pure/30 to-transparent" />
+            <div className="absolute bottom-4 right-4 left-4 flex items-end justify-between">
+              <div>
+                <h3 className="font-rubik font-bold text-lg">BYD Atto 3</h3>
+                <p className="text-gold text-sm font-medium">החל מ-₪2,390/חודש</p>
+              </div>
+              <a
+                href="https://wa.me/972533018838?text=שלום, מתעניין בליסינג BYD Atto 3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gold/90 text-black-pure px-4 py-1.5 rounded-full text-xs font-bold hover:bg-gold transition-colors"
+              >
+                לפרטים
+              </a>
             </div>
           </div>
         </motion.div>
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
+          transition={{ duration: 0.7, delay: 0.85, ease: "easeOut" }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 mb-8 max-w-4xl mx-auto"
         >
           {[
             { number: "5,000+", label: "רכבים בצי" },
@@ -133,10 +161,10 @@ export default function Hero() {
             { number: "24/7", label: "שירות לקוחות" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-rubik font-bold text-3xl sm:text-4xl text-gold mb-1">
+              <div className="font-rubik font-bold text-3xl sm:text-4xl text-gold mb-1 drop-shadow-lg">
                 {stat.number}
               </div>
-              <div className="text-gray-mid text-sm">{stat.label}</div>
+              <div className="text-white-off/70 text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -146,7 +174,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="w-6 h-10 rounded-full border-2 border-gold/40 flex justify-center pt-2">
           <div className="w-1.5 h-3 bg-gold rounded-full" />

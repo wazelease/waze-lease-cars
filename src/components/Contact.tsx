@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { PhoneIcon, ChatIcon, MapPinIcon, ClockIcon } from "./Icons";
 
+const BUSINESS_EMAIL = "Wazelease@gmail.com";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,14 +14,53 @@ export default function Contact() {
     carType: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `שלום, שמי ${formData.name}. אשמח לקבל הצעת מחיר לליסינג. ${formData.carType ? `רכב מבוקש: ${formData.carType}. ` : ""}${formData.message || ""}`;
-    window.open(
-      `https://wa.me/972533018838?text=${encodeURIComponent(text)}`,
-      "_blank"
-    );
+    setStatus("sending");
+
+    try {
+      // Send lead to business email via Formsubmit
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${BUSINESS_EMAIL}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "ליד חדש - השאיר פרטים באתר",
+            _template: "box",
+            "שם מלא": formData.name,
+            "טלפון": formData.phone,
+            "אימייל": formData.email || "לא צוין",
+            "סוג רכב מבוקש": formData.carType || "לא צוין",
+            "הודעה": formData.message || "לא צוינה הודעה",
+            _captcha: "false",
+          }),
+        }
+      );
+
+      if (res.ok) {
+        setStatus("sent");
+        setFormData({ name: "", phone: "", email: "", carType: "", message: "" });
+
+        // Also open WhatsApp as backup
+        const text = `שלום, שמי ${formData.name}. אשמח לקבל הצעת מחיר לליסינג. ${formData.carType ? `רכב מבוקש: ${formData.carType}. ` : ""}${formData.message || ""}`;
+        window.open(
+          `https://wa.me/972533018838?text=${encodeURIComponent(text)}`,
+          "_blank"
+        );
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -83,7 +124,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-mid">כתובת</div>
-                  <div className="font-medium text-lg">ישראל</div>
+                  <div className="font-medium text-lg">הרצל 21, ראשון לציון</div>
                 </div>
               </div>
 
@@ -113,6 +154,20 @@ export default function Contact() {
               <h3 className="font-rubik font-bold text-xl mb-6">
                 השאירו פרטים ונחזור אליכם
               </h3>
+
+              {status === "sent" && (
+                <div className="bg-gold/10 border border-gold/30 text-gold rounded-xl p-4 mb-6 text-center">
+                  <p className="font-bold">הפרטים נשלחו בהצלחה!</p>
+                  <p className="text-sm mt-1">נחזור אליכם בהקדם.</p>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="bg-red-500/10 border border-red-500/30 text-red-400 rounded-xl p-4 mb-6 text-center">
+                  <p className="font-bold">שגיאה בשליחה</p>
+                  <p className="text-sm mt-1">אנא נסו שוב או פנו אלינו בוואטסאפ.</p>
+                </div>
+              )}
 
               <div className="space-y-5">
                 <div>
@@ -207,9 +262,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gold text-black-pure py-4 rounded-xl font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
+                  disabled={status === "sending"}
+                  className="w-full bg-gold text-black-pure py-4 rounded-xl font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  שלחו פנייה בוואטסאפ
+                  {status === "sending" ? "שולח..." : "שלחו פנייה"}
                 </button>
               </div>
             </form>
