@@ -14,7 +14,7 @@ export default function Footer() {
                 </span>
               </div>
               <div>
-                <span className="font-rubik font-bold text-lg">Waze Lease</span>
+                <span className="font-rubik font-bold text-lg">Waze Lease Cars</span>
                 <span className="block text-gold text-xs -mt-1">ליסינג פרימיום</span>
               </div>
             </div>

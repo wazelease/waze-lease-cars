@@ -44,7 +44,7 @@ export default function Navbar() {
             </div>
             <div>
               <span className="font-rubik font-bold text-xl text-white-pure">
-                Waze Lease
+                Waze Lease Cars
               </span>
               <span className="block text-gold text-xs font-light -mt-1">
                 ליסינג פרימיום
