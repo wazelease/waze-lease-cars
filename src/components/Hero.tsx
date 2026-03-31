@@ -9,37 +9,23 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black-pure via-black-rich to-black-pure" />
-
-      {/* Subtle car background — visible but not overpowering */}
-      <div className="absolute inset-0 opacity-[0.15]">
+      {/* Full-width background image */}
+      <div className="absolute inset-0">
         <Image
           src="/waze-lease-cars/images/tesla-dark.jpg"
-          alt=""
+          alt="רכב יוקרה - Waze Lease Cars ליסינג"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center scale-105"
           priority
-          quality={80}
+          quality={90}
         />
+        {/* Lighter overlay — car is clearly visible */}
+        <div className="absolute inset-0 bg-black-pure/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black-pure/80 via-black-pure/20 to-black-pure/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black-pure/60 via-transparent to-black-pure/60" />
+        {/* Bottom transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black-rich to-transparent" />
       </div>
-
-      {/* Gold glow effects */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
-
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(201,168,76,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.4) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      {/* Bottom transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black-rich to-transparent" />
 
       {/* Animated gold particles */}
       <div className="absolute top-20 right-[15%] w-2 h-2 bg-gold/30 rounded-full blur-sm animate-pulse" />
