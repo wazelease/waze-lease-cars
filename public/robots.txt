@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wazelease.github.io/waze-lease-cars/sitemap.xml
