@@ -48,13 +48,6 @@ export default function Contact() {
       if (res.ok) {
         setStatus("sent");
         setFormData({ name: "", phone: "", email: "", carType: "", message: "" });
-
-        // Also open WhatsApp as backup
-        const text = `שלום, שמי ${formData.name}. אשמח לקבל הצעת מחיר לליסינג. ${formData.carType ? `רכב מבוקש: ${formData.carType}. ` : ""}${formData.message || ""}`;
-        window.open(
-          `https://wa.me/972533018838?text=${encodeURIComponent(text)}`,
-          "_blank"
-        );
       } else {
         setStatus("error");
       }
@@ -156,9 +149,9 @@ export default function Contact() {
               </h3>
 
               {status === "sent" && (
-                <div className="bg-gold/10 border border-gold/30 text-gold rounded-xl p-4 mb-6 text-center">
-                  <p className="font-bold">הפרטים נשלחו בהצלחה!</p>
-                  <p className="text-sm mt-1">נחזור אליכם בהקדם.</p>
+                <div className="bg-green-500/10 border border-green-500/30 text-green-400 rounded-xl p-4 mb-6 text-center">
+                  <p className="font-bold text-lg">✓ הטופס נשלח בהצלחה!</p>
+                  <p className="text-sm mt-1 text-green-400/80">תודה שפניתם אלינו, נחזור אליכם בהקדם האפשרי.</p>
                 </div>
               )}
 
