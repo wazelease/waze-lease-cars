@@ -15,14 +15,12 @@ export default function Hero() {
           src="/waze-lease-cars/images/tesla-dark.jpg"
           alt="רכב יוקרה - Waze Lease Cars ליסינג"
           fill
-          className="object-cover object-center scale-105"
+          className="object-cover object-center scale-105 brightness-125"
           priority
           quality={90}
         />
-        {/* Lighter overlay — car is clearly visible */}
-        <div className="absolute inset-0 bg-black-pure/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black-pure/80 via-black-pure/20 to-black-pure/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black-pure/60 via-transparent to-black-pure/60" />
+        {/* Single light overlay — keeps text readable without hiding the car */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black-pure/70 via-black-pure/30 to-black-pure/80" />
         {/* Bottom transition */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black-rich to-transparent" />
       </div>
