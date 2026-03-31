@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Full-width background image */}
       <div className="absolute inset-0">
         <Image
-          src="/waze-lease-cars/images/tesla-dark.jpg"
+          src="/waze-lease-cars/images/tesla-dark.jpg?v=2"
           alt="רכב יוקרה - Waze Lease Cars ליסינג"
           fill
           className="object-cover object-center scale-105 brightness-125"
