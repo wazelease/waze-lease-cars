@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -10,6 +11,18 @@ export default function Hero() {
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black-pure via-black-rich to-black-pure" />
+
+      {/* Subtle car background — visible but not overpowering */}
+      <div className="absolute inset-0 opacity-[0.15]">
+        <Image
+          src="/waze-lease-cars/images/tesla-dark.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          quality={80}
+        />
+      </div>
 
       {/* Gold glow effects */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
