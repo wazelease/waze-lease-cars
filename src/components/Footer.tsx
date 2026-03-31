@@ -92,8 +92,7 @@ export default function Footer() {
                   שלחו וואטסאפ
                 </a>
               </li>
-              <li className="text-gray-mid text-sm">א׳-ה׳ 08:00-20:00</li>
-              <li className="text-gray-mid text-sm">ו׳ 08:00-14:00</li>
+              <li className="text-gray-mid text-sm">א׳-ה׳ 09:00-18:00</li>
             </ul>
           </div>
         </div>

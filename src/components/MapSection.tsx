@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MapPinIcon, NavigationIcon } from "./Icons";
 
 const BUSINESS_ADDRESS = "הרצל 21, ראשון לציון, ישראל";
 const GOOGLE_MAPS_EMBED_QUERY = encodeURIComponent(BUSINESS_ADDRESS);
@@ -53,7 +54,7 @@ export default function MapSection() {
           <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                <span className="text-2xl">📍</span>
+                <MapPinIcon />
               </div>
               <div>
                 <h3 className="font-rubik font-bold text-lg mb-1">
@@ -63,7 +64,7 @@ export default function MapSection() {
                   {BUSINESS_ADDRESS}
                 </p>
                 <p className="text-gray-mid text-sm mt-1">
-                  א׳-ה׳ 08:00-20:00 | ו׳ 08:00-14:00
+                  א׳-ה׳ 09:00-18:00
                 </p>
               </div>
             </div>
@@ -74,13 +75,7 @@ export default function MapSection() {
               rel="noopener noreferrer"
               className="bg-gold text-black-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 whitespace-nowrap flex items-center gap-2"
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="w-5 h-5"
-                fill="currentColor"
-              >
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-              </svg>
+              <NavigationIcon />
               נווטו אלינו
             </a>
           </div>

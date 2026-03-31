@@ -65,10 +65,10 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
-            href="#vehicles"
+            href="#services"
             className="bg-gold text-black-pure px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 w-full sm:w-auto text-center"
           >
-            צפו במבחר הרכבים
+            גלו את השירותים שלנו
           </a>
           <a
             href="#calculator"

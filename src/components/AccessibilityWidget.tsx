@@ -192,32 +192,44 @@ export default function AccessibilityWidget() {
                 {
                   key: "highContrast" as const,
                   label: "ניגודיות גבוהה",
-                  icon: "🔲",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor"/></svg>
+                  ),
                 },
                 {
                   key: "dyslexiaFont" as const,
                   label: "גופן לדיסלקציה",
-                  icon: "🔤",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                  ),
                 },
                 {
                   key: "highlightLinks" as const,
                   label: "הדגשת קישורים",
-                  icon: "🔗",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  ),
                 },
                 {
                   key: "grayscale" as const,
                   label: "גווני אפור",
-                  icon: "⚫",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                  ),
                 },
                 {
                   key: "bigCursor" as const,
                   label: "סמן גדול",
-                  icon: "🖱️",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><path d="M4 4l7.07 17 2.51-7.39L21 11.07z"/></svg>
+                  ),
                 },
                 {
                   key: "textSpacing" as const,
                   label: "ריווח טקסט",
-                  icon: "↔️",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5"><path d="M21 10H3M21 6H3M21 14H3M21 18H3"/></svg>
+                  ),
                 },
               ].map((option) => (
                 <button
@@ -233,7 +245,7 @@ export default function AccessibilityWidget() {
                   role="switch"
                   aria-checked={settings[option.key]}
                 >
-                  <span className="text-lg">{option.icon}</span>
+                  <span className="text-gold">{option.icon}</span>
                   <span className="text-sm font-medium">{option.label}</span>
                   <span className="mr-auto">
                     {settings[option.key] ? (

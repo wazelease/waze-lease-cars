@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Vehicles from "@/components/Vehicles";
+
 import Services from "@/components/Services";
 import Advantages from "@/components/Advantages";
 import Calculator from "@/components/Calculator";
@@ -17,7 +17,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Vehicles />
         <Services />
         <Advantages />
         <Calculator />

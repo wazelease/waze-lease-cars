@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { StarIcon } from "./Icons";
 
 const testimonials = [
   {
@@ -66,9 +67,7 @@ export default function Testimonials() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, i) => (
-                  <span key={i} className="text-gold text-lg">
-                    ★
-                  </span>
+                  <StarIcon key={i} />
                 ))}
               </div>
 

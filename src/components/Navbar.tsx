@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "ראשי", href: "#hero" },
-  { label: "רכבים", href: "#vehicles" },
+
   { label: "שירותים", href: "#services" },
   { label: "יתרונות", href: "#advantages" },
   { label: "חישוב ליסינג", href: "#calculator" },

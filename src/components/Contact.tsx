@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { PhoneIcon, ChatIcon, MapPinIcon, ClockIcon } from "./Icons";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ export default function Contact() {
                 className="flex items-center gap-4 text-gray-light hover:text-gold transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <span className="text-xl">📞</span>
+                  <PhoneIcon />
                 </div>
                 <div>
                   <div className="text-sm text-gray-mid">טלפון</div>
@@ -68,7 +69,7 @@ export default function Contact() {
                 className="flex items-center gap-4 text-gray-light hover:text-gold transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <span className="text-xl">💬</span>
+                  <ChatIcon />
                 </div>
                 <div>
                   <div className="text-sm text-gray-mid">וואטסאפ</div>
@@ -78,7 +79,7 @@ export default function Contact() {
 
               <div className="flex items-center gap-4 text-gray-light">
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                  <span className="text-xl">📍</span>
+                  <MapPinIcon />
                 </div>
                 <div>
                   <div className="text-sm text-gray-mid">כתובת</div>
@@ -88,11 +89,11 @@ export default function Contact() {
 
               <div className="flex items-center gap-4 text-gray-light">
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                  <span className="text-xl">🕐</span>
+                  <ClockIcon />
                 </div>
                 <div>
                   <div className="text-sm text-gray-mid">שעות פעילות</div>
-                  <div className="font-medium">א׳-ה׳ 08:00-20:00 | ו׳ 08:00-14:00</div>
+                  <div className="font-medium">א׳-ה׳ 09:00-18:00</div>
                 </div>
               </div>
             </div>

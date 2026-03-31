@@ -1,40 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { KeyIcon, BuildingIcon, WalletIcon, RefreshIcon, ShieldIcon, WrenchIcon } from "./Icons";
+import { ReactNode } from "react";
 
-const services = [
+const services: { icon: ReactNode; title: string; description: string }[] = [
   {
-    icon: "🔑",
+    icon: <KeyIcon />,
     title: "ליסינג פרטי",
     description:
       "רכב חדש בתשלום חודשי נוח. כולל ביטוח, טיפולים ושירות מלא. בסוף התקופה — החלפה לרכב חדש.",
   },
   {
-    icon: "🏢",
+    icon: <BuildingIcon />,
     title: "ליסינג תפעולי",
     description:
       "פתרון מושלם לעסקים. ניהול צי רכבים מלא, חיסכון במיסים, ושירות 24/7 לכל העובדים.",
   },
   {
-    icon: "💰",
+    icon: <WalletIcon />,
     title: "ליסינג מימוני",
     description:
       "מימון רכישת רכב בתנאים מעולים. ריביות נמוכות, תקופות גמישות, והרכב שלכם בסוף.",
   },
   {
-    icon: "🔄",
+    icon: <RefreshIcon />,
     title: "טרייד אין",
     description:
       "יש לכם רכב קיים? נקנה אותו במחיר הוגן ונקזז מהעסקה. תהליך מהיר ושקוף.",
   },
   {
-    icon: "🛡️",
+    icon: <ShieldIcon />,
     title: "ביטוח מקיף",
     description:
       "חבילות ביטוח מקיף בתנאים בלעדיים. מחירים שלא תמצאו לבד, כולל ביטוח צד ג׳ מורחב.",
   },
   {
-    icon: "🔧",
+    icon: <WrenchIcon />,
     title: "שירות ותחזוקה",
     description:
       "טיפולים שוטפים, תיקונים, רכב חלופי ושירותי דרך. הכל כלול — אתם רק נוהגים.",
@@ -77,7 +79,9 @@ export default function Services() {
               whileHover={{ y: -5 }}
               className="bg-black-card border border-gray-dark/30 rounded-2xl p-8 hover:border-gold/30 transition-all duration-300 group"
             >
-              <div className="text-4xl mb-5">{service.icon}</div>
+              <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
+                {service.icon}
+              </div>
               <h3 className="font-rubik font-bold text-xl mb-3 group-hover:text-gold transition-colors">
                 {service.title}
               </h3>
